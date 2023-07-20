@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
+    <title>Starbucks</title>
+</head>
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo-content">
+                <a href="#">
+                    <img class="logo" src="./assets/logo.png" alt="Logo Starbucks">
+                </a>
+            </div>
+
+            <nav class="nav-content">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#">What's New</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="hero">
+        
+        <div class="hero-content">            
+            <h2>It's not just Coffee<br> It's <span id="starbucks-bold">Starbucks</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque atque velit neque quam molestiae deserunt? Quia, nemo voluptatibus omnis mollitia qui, aspernatur facere quos nisi pariatur nihil illo, necessitatibus ex!</p>
+            <button id="learn-more">Learn more</button>                        
+        </div>
+
+        <div class="cup-content">
+            <img id="coffe-image" src="./assets/img1.png" alt="">
+        </div>
+
+        <div class="contact-list">
+
+            <ul>
+                <li>
+                    <img src="./assets/facebook.png" alt="">
+                </li>
+                <li>
+                    <img src="./assets/instagram.png" alt="">
+                </li>
+                <li>
+                    <img src="./assets/twitter.png" alt="">
+                </li>
+            </ul>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <ul>
+            <li onclick="handleChangeCoffe('./assets/img1.png', '#037144')" >
+                <img src="./assets/thumb1.png" alt="Cafe 1">
+            </li>
+            <li onclick="handleChangeCoffe('./assets/img2.png', '#EB7396')" >
+                <img src="./assets/thumb2.png" alt="Cafe 2">
+            </li>
+            <li onclick="handleChangeCoffe('./assets/img3.png', '#D550AE')" >
+                <img src="./assets/thumb3.png" alt="Cafe 3">
+            </li>
+        </ul>
+
+    </footer>
+
+    <div id="circle"></div>
+
+    <script>
+        
+        let button = document.getElementById('learn-more');
+        let title = document.getElementById('starbucks-bold');
+        let circle = document.getElementById('circle');
+        let image = document.getElementById('coffe-image')
+
+        image.classList.add('image-animate')
+
+        function handleChangeCoffe(uriImage, color){
+            
+            image.classList.remove('image-animate')
+
+            setTimeout(() => {
+                image.classList.add('image-animate')
+                button.style.background = color;
+                circle.style.background = color;
+                title.style.color = color;
+                image.setAttribute('src', uriImage);      
+            }, 50)
+        }
+
+    </script>
+
+</body>
+</html>
